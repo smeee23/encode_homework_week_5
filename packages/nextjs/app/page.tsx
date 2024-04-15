@@ -49,9 +49,7 @@ function WalletInfo() {
         <p>Connected to the network {chain?.name}</p>
         <WalletAction></WalletAction>
         <WalletBalance address= {address as `0x${string}`}></WalletBalance>
-        <TokenAddress/>
         <TokenInfo address={address as `0x${string}`}></TokenInfo>
-        <RandomWord></RandomWord>
       </div>
     );
   if (isConnecting)
@@ -80,18 +78,7 @@ function WalletAction() {
     <div className="card w-96 bg-primary text-primary-content mt-4">
       <div className="card-body">
         <h2 className="card-title">Buy Lottery Token</h2>
-        <div className="form-control w-full max-w-xs my-4">
-          <label className="label">
-            <span className="label-text">Enter the message to be signed:</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter Buy Amount"
-            className="input input-bordered w-full max-w-xs"
-            value={buyAmount}
-            onChange={e => setSignatureMessage(e.target.value)}
-          />
-        </div>
+        
         <BuyTokens/>
         <Approve/>
         <ReturnTokens/>
